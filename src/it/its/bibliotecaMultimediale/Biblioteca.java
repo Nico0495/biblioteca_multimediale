@@ -56,7 +56,7 @@ public class Biblioteca {
         return builder.toString();
     }
 
-    public List<MaterialeBiblioteca> ricercaElementi(String titolo) {
+    public List<MaterialeBiblioteca> ricercaElementi(String titolo) throws Exception {
         // modificato accesso, tipo ritorno, nome metodo e parametri
         List<MaterialeBiblioteca> risultato = new ArrayList<>();
         for (MaterialeBiblioteca materialeBiblioteca : collezioneMateriale) {
@@ -64,6 +64,8 @@ public class Biblioteca {
                 risultato.add(materialeBiblioteca);
             }
         }
+        if(risultato.isEmpty())
+            throw new NoItemException("Errore");
         return risultato;
     }
 
@@ -94,6 +96,10 @@ public class Biblioteca {
             }
         }
         return ricercaTipo;
+    }
+
+    public Set<MaterialeBiblioteca>getCollezioneMateriale(){
+        return this.collezioneMateriale;
     }
 
 }

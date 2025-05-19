@@ -2,10 +2,10 @@ package it.its.bibliotecaMultimediale;
 
 public class Libro extends MaterialeBiblioteca {
     private final String ISBN;
-    private final String pagine;
+    private final int pagine;
     private final Autore riferimentoAutore;
 
-    public Libro(long id, String titolo, int annoDiRilascio, int disponibilita, String ISBM, String pagine, Autore riferimentoAutore) {
+    public Libro(long id, String titolo, int annoDiRilascio, int disponibilita, String ISBM, int pagine, Autore riferimentoAutore) {
         super(id, titolo, annoDiRilascio, disponibilita);
         this.ISBN = ISBM;
         this.pagine = pagine;
@@ -16,7 +16,7 @@ public class Libro extends MaterialeBiblioteca {
         return ISBN;
     }
 
-    public String getPagine() {
+    public int getPagine() {
         return pagine;
     }
 
@@ -28,13 +28,13 @@ public class Libro extends MaterialeBiblioteca {
     public final boolean equals(Object o) {
         if (!(o instanceof Libro libro)) return false;
 
-        return ISBN.equals(libro.ISBN) && pagine.equals(libro.pagine) && riferimentoAutore.equals(libro.riferimentoAutore);
+        return ISBN.equals(libro.ISBN) && pagine == libro.pagine && riferimentoAutore.equals(libro.riferimentoAutore);
     }
 
     @Override
     public int hashCode() {
         int result = ISBN.hashCode();
-        result = 31 * result + pagine.hashCode();
+        result = 31 * result + pagine;
         result = 31 * result + riferimentoAutore.hashCode();
         return result;
     }
