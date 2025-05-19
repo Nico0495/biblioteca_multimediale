@@ -1,9 +1,14 @@
 package it.its.bibliotecaMultimediale;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Rivista extends MaterialeBiblioteca {
+public class Rivista extends MaterialeBiblioteca implements Serializable {
+
+    @Serial
+    private final static long serialVersionUID = 1L;
     private final int numeroUscita;
     public enum Periodicita {
         SETTIMANALE,

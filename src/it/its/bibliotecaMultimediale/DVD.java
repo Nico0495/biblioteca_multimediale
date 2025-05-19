@@ -1,9 +1,15 @@
 package it.its.bibliotecaMultimediale;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DVD extends MaterialeBiblioteca{
+public class DVD extends MaterialeBiblioteca implements Serializable {
+
+    @Serial
+    private final static long serialVersionUID = 1L;
+
     private final Autore Regista;
     private final int durata;
     public enum Genere {

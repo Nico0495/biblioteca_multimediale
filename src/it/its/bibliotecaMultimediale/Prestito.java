@@ -1,8 +1,13 @@
 package it.its.bibliotecaMultimediale;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Prestito {
+public class Prestito implements Serializable {
+
+    @Serial
+    private final static long serialVersionUID = 1L;
     private final MaterialeBiblioteca riferimentoMateriale;
     private final Utente riferimentoUtente;
     private final LocalDate dataPrestito;

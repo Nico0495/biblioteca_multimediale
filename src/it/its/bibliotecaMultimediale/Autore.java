@@ -1,10 +1,15 @@
 package it.its.bibliotecaMultimediale;
 
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Autore {
+public class Autore implements Serializable {
+
+    @Serial
+    private final static long serialVersionUID = 1L;
     private final String nome;
     private final String cognome;
     private final LocalDate dataNascita;

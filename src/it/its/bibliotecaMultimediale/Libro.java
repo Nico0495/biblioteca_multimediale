@@ -1,6 +1,12 @@
 package it.its.bibliotecaMultimediale;
 
-public class Libro extends MaterialeBiblioteca {
+import java.io.Serializable;
+import java.io.Serial;
+
+public class Libro extends MaterialeBiblioteca implements Serializable {
+
+    @Serial
+    private final static long serialVersionUID = 1L;
     private final String ISBN;
     private final int pagine;
     private final Autore riferimentoAutore;
