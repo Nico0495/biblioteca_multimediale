@@ -16,7 +16,7 @@ public class GestioneNoleggi {
         collezioneNoleggi.add(nuovoNoleggio);
     }
 
-    public String stampaCollezioneUtenti() {
+    public String stampaCollezioneNoleggi() {
         StringBuilder builder = new StringBuilder();
         for (Noleggio noleggio : collezioneNoleggi) {
             builder.append(noleggio.toString()).append("\n");
@@ -52,5 +52,18 @@ public class GestioneNoleggi {
             }
         }
         return risultato;
+    }
+
+    public Noleggio ricercaNoleggi(long idUtente, long idMateriale, LocalDate dataPrestito){
+        for(Noleggio noleggio: collezioneNoleggi){
+            if(idUtente==noleggio.getRiferimentoUtente().getId() && idMateriale==noleggio.getRiferimentoMateriale().getId() && dataPrestito.equals(noleggio.getDataNoleggio())){
+                return noleggio;
+            }
+        }
+        return null;
+    }
+
+    public Set<Noleggio> getCollezioneNoleggi() {
+        return collezioneNoleggi;
     }
 }

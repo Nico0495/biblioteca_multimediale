@@ -87,6 +87,15 @@ public class Biblioteca {
 
     }
 
+    public MaterialeBiblioteca ricercaElementi(long id){
+        for (MaterialeBiblioteca materiale : collezioneMateriale) {
+            if (id==materiale.getId()) {
+                return materiale;
+            }
+        }
+        return null;
+    }
+
     public List<MaterialeBiblioteca> ricercaElementi(Class<? extends MaterialeBiblioteca > clazz) {
         // modificato accesso, tipo ritorno, nome metodo e parametri
         List<MaterialeBiblioteca> ricercaTipo = new ArrayList<>();

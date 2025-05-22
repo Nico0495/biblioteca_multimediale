@@ -8,7 +8,7 @@ import java.util.Map;
 public class DVD extends MaterialeBiblioteca implements Serializable {
 
     @Serial
-    private final static long serialVersionUID = 1L;
+    private final static long serialVersionUID = 1L;    // da aggiungere sempre
 
     private final Autore Regista;
     private final int durata;
@@ -18,9 +18,9 @@ public class DVD extends MaterialeBiblioteca implements Serializable {
         DRAMMATICO;
         public static Map<String, Genere> GENERE_MAP= new HashMap<>();
         static {
-            GENERE_MAP.put("AZIONE", AZIONE);
-            GENERE_MAP.put("HORROR", HORROR);
-            GENERE_MAP.put("DRAMMATICO", DRAMMATICO);
+            GENERE_MAP.put("azione", AZIONE);
+            GENERE_MAP.put("horror", HORROR);
+            GENERE_MAP.put("drammatico", DRAMMATICO);
         }
         public static Genere lookUp(String value){
             if(value==null)

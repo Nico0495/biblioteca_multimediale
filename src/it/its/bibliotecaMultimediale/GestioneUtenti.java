@@ -1,6 +1,8 @@
 package it.its.bibliotecaMultimediale;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class GestioneUtenti {
@@ -28,5 +30,38 @@ public class GestioneUtenti {
                 return;
             }
         }
+    }
+
+    public Utente ricercaUtente(long id) {
+        for (Utente utente : collezioneUtenti) {
+            if (utente.getId() == id) {
+                return utente;
+            }
+        }
+        return null;
+    }
+
+    public List<Utente> ricercaUtente(String nome, String cognome){
+        List<Utente> risultato = new ArrayList<>();
+        for(Utente utente : collezioneUtenti){
+            if(utente.getNome().equals(nome) && utente.getCognome().equals(cognome)){
+                risultato.add(utente);
+            }
+        }
+        return risultato;
+    }
+
+    public List<Utente> ricercaUtente(String ricerca){
+        List<Utente> risultato = new ArrayList<>();
+        for(Utente utente : collezioneUtenti){
+            if(utente.getNome().equals(ricerca) || utente.getCognome().equals(ricerca)){
+                risultato.add(utente);
+            }
+        }
+        return risultato;
+    }
+
+    public Set<Utente> getCollezioneUtenti() {
+        return collezioneUtenti;
     }
 }

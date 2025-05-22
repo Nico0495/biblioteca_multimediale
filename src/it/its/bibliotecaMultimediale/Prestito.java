@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Prestito implements Serializable {
 
     @Serial
-    private final static long serialVersionUID = 1L;
+    private final static long serialVersionUID = 1L;    // da aggiungere sempre
     private final MaterialeBiblioteca riferimentoMateriale;
     private final Utente riferimentoUtente;
     private final LocalDate dataPrestito;

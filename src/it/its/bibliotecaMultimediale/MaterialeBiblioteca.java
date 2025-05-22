@@ -1,15 +1,25 @@
 package it.its.bibliotecaMultimediale;
 
-public abstract class MaterialeBiblioteca {
+import java.io.Serial;
+import java.io.Serializable;
+
+public abstract class MaterialeBiblioteca implements Serializable {
+
+    @Serial
+    private final static long serialVersionUID = 1L;
     private final long id;
     private final String titolo;
     private final int annoDiRilascio;
-    private final int disponibilita;
+    private int disponibilita;
 
     public MaterialeBiblioteca(long id, String titolo, int annoDiRilascio, int disponibilita) {
         this.id = id;
         this.titolo = titolo;
         this.annoDiRilascio = annoDiRilascio;
+        this.disponibilita = disponibilita;
+    }
+
+    public void setDisponibilita(int disponibilita) {
         this.disponibilita = disponibilita;
     }
 

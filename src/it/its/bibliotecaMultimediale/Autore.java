@@ -35,9 +35,9 @@ public class Autore implements Serializable {
     @Override
     public String toString() {
         return "Autore{" +
-                ", nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", dataNascita=" + dataNascita +
+                "\n nome= " + nome  +
+                ",\n cognome= " + cognome  +
+                ",\n dataNascita= " + dataNascita +
                 '}';
     }
 

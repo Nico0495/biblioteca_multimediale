@@ -2,11 +2,12 @@ package it.its.bibliotecaMultimediale;
 
 import java.io.Serializable;
 import java.io.Serial;
+import java.util.Objects;
 
 public class Libro extends MaterialeBiblioteca implements Serializable {
 
     @Serial
-    private final static long serialVersionUID = 1L;
+    private final static long serialVersionUID = 1L;  //da aggiungere sempre
     private final String ISBN;
     private final int pagine;
     private final Autore riferimentoAutore;
@@ -48,13 +49,13 @@ public class Libro extends MaterialeBiblioteca implements Serializable {
     @Override
     public String toString() {
         return "Libro{" +
-                ", id=" + this.getId() +
-                ", titolo='" + this.getTitolo() + '\'' +
-                ", annoDiRilascio=" + this.getAnnoDiRilascio() + '\'' +
-                ", disponibilita=" + this.getDisponibilita() + '\'' +
-                ", ISBM='" + ISBN + '\'' +
-                ", pagine='" + pagine + '\'' +
-                ", riferimentoAutore=" + riferimentoAutore +
+                "\nid= " + this.getId() +
+                ",\ntitolo= " + this.getTitolo() +
+                ",\nannoDiRilascio= " + this.getAnnoDiRilascio() +
+                ",\ndisponibilita = " + this.getDisponibilita() +
+                ",\nISBM= " + ISBN +
+                ",\npagine= " + pagine  +
+                ",\nriferimentoAutore= " + riferimentoAutore +
                 '}';
     }
 }
